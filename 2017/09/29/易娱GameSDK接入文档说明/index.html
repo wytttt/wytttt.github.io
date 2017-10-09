@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head tag -->
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  
+  <title>易娱GameSDK接入文档说明 - YiJin /  Wang</title>
+
+  <!--Favicon-->
+  <link rel="icon" href="favicon/favicon.ico">
+
+  <!--Description-->
+  
+      <meta name="description" content="Design Play And Fun!">
+  
+
+  <!--Author-->
+  
+      <meta name="author" content="王艺锦">
+  
+
+  <!-- Pure CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Open+Sans:300,800" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+
+  <body>
+  	<div class="container-fluid navbar-container m-sm-5">
+      <!-- Header -->
+      <nav class="navbar navbar-toggleable-sm navbar-light px-1 py-3 my-3 mb-sm-5">
+  <a class="navbar-brand ml-2" href="/">YiJin /  Wang</a>
+  <button class="navbar-toggler navbar-toggler-right py-2" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse text-center" id="navbarCollapse">
+    <ul class="navbar-nav ml-auto my-auto">
+      
+    </ul>
+    <hr class="hidden-md-up" />
+  </div>
+</nav>
+
+
+  		<div class="row">
+  			<div class="col-12 mb-4">
+  <img class="img-fluid project-img" src="/images/unsplash.jpg" alt="易娱GameSDK接入文档说明">
+</div>
+<div class="col-lg-4 col-12 pt-3 px-4 pr-lg-5">
+  <h1>易娱GameSDK接入文档说明</h1>
+</div>
+<div class="col-lg-8 col-12 pt-lg-3 mb-4 pl-lg-5 px-lg-0 px-4 portfolio-content">
+  <h2 id="EyuGameSDK-v-2-0-接入文档说明"><a href="#EyuGameSDK-v-2-0-接入文档说明" class="headerlink" title="#EyuGameSDK(v.2.0)接入文档说明"></a>#EyuGameSDK(v.2.0)接入文档说明</h2><h3 id="准备材料"><a href="#准备材料" class="headerlink" title="准备材料"></a>准备材料</h3><p><img src="Snip20170918_4.png" alt="Snip20170918_4"></p>
+<ul>
+<li>EyuGameSDK.a</li>
+<li>静态库 包含微信 QQ第三方授权登录sdk</li>
+<li>使用了MBHUD</li>
+<li>EyuGameSDKResource.bundle</li>
+<li>包含icon对应的image</li>
+<li>xib/storyboard打包之后变成的nib</li>
+</ul>
+<h3 id="配置依赖库及其设置"><a href="#配置依赖库及其设置" class="headerlink" title="配置依赖库及其设置"></a>配置依赖库及其设置</h3><ul>
+<li><p>请按照下图的名单依次添加依赖库到项目中<br><img src="Snip20170918_3.png" alt="Snip20170918_3"></p>
+</li>
+<li><p>请在<strong>Targets</strong>(选中项目target)-&gt;<strong>build Setting</strong> -&gt;<strong>search paths</strong> -&gt;<strong>library search paths</strong>添加好libEyugamesdk.a的路径<br><img src="Snip20170918_6.png" alt="Snip20170918_6"></p>
+</li>
+<li><p>按照如图<strong>Targets(</strong>选中项目target)-&gt;<strong>info</strong> -&gt;<strong>url types</strong> 配置好根据您在微信开放平台,QQ开放平台申请的AppId和KEY<br><img src="Snip20170918_5.png" alt="Snip20170918_5"></p>
+</li>
+<li><p>配置白名单(由于国内的SDK需要支持 QQ 和 微信 第三方登录)打开info.plist文件添加对应的字段,可以右键点击info.plist文件open as sourcecode 将下列文字复制添加进去即可<br><img src="Snip20170918_9.png" alt="Snip20170918_9"></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&lt;key&gt;LSApplicationQueriesSchemes&lt;/key&gt;</div><div class="line">&lt;array&gt;</div><div class="line">&lt;string&gt;wechat&lt;/string&gt;</div><div class="line">&lt;string&gt;mqqapi&lt;/string&gt;</div><div class="line">&lt;string&gt;mqq&lt;/string&gt;</div><div class="line">&lt;string&gt;weixin&lt;/string&gt;</div><div class="line">&lt;string&gt;mqq&lt;/string&gt;</div><div class="line">&lt;string&gt;mqqapi&lt;/string&gt;</div><div class="line">&lt;string&gt;mqqOpensdkSSoLogin&lt;/string&gt;</div><div class="line">&lt;string&gt;mqqconnect&lt;/string&gt;</div><div class="line">&lt;string&gt;mqqopensdkdataline&lt;/string&gt;</div><div class="line">&lt;string&gt;mqqopensdkgrouptribeshare&lt;/string&gt;</div><div class="line">&lt;string&gt;mqqopensdkfriend&lt;/string&gt;</div><div class="line">&lt;string&gt;mqqopensdkapi&lt;/string&gt;</div><div class="line">&lt;string&gt;mqqopensdkapiV2&lt;/string&gt;</div><div class="line">&lt;string&gt;mqqopensdkapiV3&lt;/string&gt;</div><div class="line">&lt;string&gt;mqzoneopensdk&lt;/string&gt;</div><div class="line">&lt;string&gt;mqqopensdkapiV3&lt;/string&gt;</div><div class="line">&lt;string&gt;mqqopensdkapiV3&lt;/string&gt;</div><div class="line">&lt;string&gt;mqzone&lt;/string&gt;</div><div class="line">&lt;string&gt;mqzonev2&lt;/string&gt;</div><div class="line">&lt;string&gt;mqzoneshare&lt;/string&gt;</div><div class="line">&lt;string&gt;wtloginqzone&lt;/string&gt;</div><div class="line">&lt;string&gt;mqzonewx&lt;/string&gt;</div><div class="line">&lt;string&gt;mqzoneopensdkapiV2&lt;/string&gt;</div><div class="line">&lt;string&gt;mqzoneopensdkapi19&lt;/string&gt;</div><div class="line">&lt;string&gt;mqzoneopensdkapi&lt;/string&gt;</div><div class="line">&lt;string&gt;mqzoneopensdk&lt;/string&gt;</div><div class="line">&lt;string&gt;weixin&lt;/string&gt;</div><div class="line">&lt;string&gt;wtloginmqq2&lt;/string&gt;</div><div class="line">&lt;/array&gt;</div></pre></td></tr></table></figure>
+<h3 id="开始接入"><a href="#开始接入" class="headerlink" title="开始接入"></a>开始接入</h3><ul>
+<li><p>导入SDK的头文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#import &quot;EyuGameSDK/EyuGameSDKHeader.h&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在<strong>Appdelegate</strong>中程序最早启动的地方加入初始化sdk的方法</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions &#123;</div><div class="line">/*---------------初始化SDK--------------------------*/</div><div class="line">[EyuGameSDK sharedInstance].isDebugEnable = YES;</div><div class="line">[[EyuGameSDK sharedInstance] initializeEyuGameSDKWithAppID:@&quot;999&quot; andAppKey:@&quot;8ae9fb6ca6d439bbb00b8552472e5038&quot;];</div><div class="line">/*--------------向QQ注册--------------------------*/</div><div class="line">//QQ</div><div class="line">[EyuLogin_QQ regitserQQToTencent];</div><div class="line">/*--------------向微信注册---------------------*/</div><div class="line">//weixin</div><div class="line">[EyuLogin_WeChat WeChatRegister];</div><div class="line">return YES;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>处理连接回调保证唤起第三方APP时候保证能接受到信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url</div><div class="line">&#123;</div><div class="line">NSLog(@&quot;--------url = %@-----&quot;,url);</div><div class="line">NSString * urlstring = url.absoluteString;</div><div class="line">NSLog(@&quot;urlstring = %@&quot;,urlstring);</div><div class="line">if ([urlstring containsString:@&quot;tencent&quot;]) &#123;</div><div class="line">//QQ</div><div class="line">return [TencentOAuth HandleOpenURL:url];</div><div class="line">&#125;</div><div class="line">else if ([urlstring containsString:@&quot;wx&quot;])&#123;</div><div class="line">[EyuLogin_WeChat WeChatHandleOpenURL:url];</div><div class="line">return YES;</div><div class="line">&#125;else&#123;</div><div class="line">return YES;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在需要登录窗的控制器 viewdidload 方法加入带登录视图的代码</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[EyuGameSDK sharedInstance]LoginWithView];</div></pre></td></tr></table></figure>
+<p><strong>🚀 成功</strong></p>
+<p>Copyright © 2017广州易娱游戏科技有限公司 Copyright Holder All Rights Reserved.</p>
+<hr>
+<ul>
+<li>如果是带视图的登录方式上面就已经完成SDK所需要的接入,下面详细分解一下sdk的架构和使用注意点</li>
+</ul>
+<ul>
+<li>伞头文件为 EyuGameSDKHeader.h</li>
+<li>EyuGameSDK.h 有四个模块:<strong>初始化模块,登录模块,游戏模块和充值模块</strong></li>
+</ul>
+<ul>
+<li><p><strong><em>初始化模块</em></strong>:<br><img src="Snip20170919_12.png" alt="Snip20170919_12"><br>需要传入与易娱发行后台分配的 APPID 和appkey</p>
+</li>
+<li><p><strong><em>登录模块</em></strong>:<br><img src="Snip20170919_14.png" alt="Snip20170919_14"><br>总体分为三个平台<br>如果使用带视图的登录方式 对应的登录和退出方法如上图展示,如果使用的是非视图登录方式,您需要对登录模块中的子元素有一定的概念了解,依照平台对应的登录方法存在 不同的类里面.</p>
+</li>
+</ul>
+<ul>
+<li>_易娱平台(EyuLogin<em>Native)</em> :包含了匿名登录/账号密码登录/手机验证码登录</li>
+<li>_微信(EyuLogin<em>WeChat)</em>:第三方授权机制</li>
+<li>_QQ(EyuLogin<em>QQ)</em>:第三方授权机制</li>
+</ul>
+<ul>
+<li><strong><em>游戏模块</em></strong>:<br><img src="Snip20170919_13.png" alt="Snip20170919_13"><br>游戏模块中我们负责统计用户的角色账号统计,以及角色升级统计</li>
+<li><strong><em>充值模块</em></strong>:<br><img src="Snip20170919_16.png" alt="Snip20170919_16"><br>在这个模块中使用注意点是:苹果内购的申请,对应的计费点需要明确.</li>
+</ul>
+
+</div>
+
+
+      </div>
+      
+  	</div>
+
+    <!-- After footer scripts -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+  </body>
+</html>
