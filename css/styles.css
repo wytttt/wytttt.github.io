@@ -41,6 +41,8 @@ input:focus, textarea:focus {
 .portfolio-content {
 	line-height: 2;
 	color: #555;
+	/*注释:这里是修改居中;*/
+	text-align: center;
 }
 
 .portfolio-content a {
@@ -153,9 +155,9 @@ h1, h2, h3 {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-
+/*注释:这里是修改透明度;*/
 .hovereffect:hover img {
-  opacity: 0;
+  opacity: 0.1;
   filter: alpha(opacity=0);
 }
 .page-nav {
